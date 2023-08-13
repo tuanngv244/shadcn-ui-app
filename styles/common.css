@@ -1,0 +1,8 @@
+.mask-cursor-intro {
+    position: absolute;
+    mask-image: url("../public/mask-cursor.svg");
+    background: #dc2626;
+    mask-repeat: no-repeat;
+    mask-size: 40px;
+    color: black;
+}
