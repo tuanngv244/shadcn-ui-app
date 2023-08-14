@@ -1,6 +1,7 @@
 import "@/styles/globals.css"
 import "@/styles/common.css"
 import { Metadata } from "next"
+import NextTopLoader from "nextjs-toploader"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -40,6 +41,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         fontSans.variable
                     )}
                 >
+                    <NextTopLoader
+                        color="#afa18f"
+                        height={1}
+                        speed={600}
+                        initialPosition={1}
+                        showSpinner={false}
+                    />
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="system"

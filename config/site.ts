@@ -4,12 +4,16 @@ export const siteConfig = {
     name: "Nguyen Van Tuan",
     navLinks: [
         {
-            title: "Home",
+            title: "about",
             href: "/",
         },
         {
-            title: "About Us",
-            href: "/about-us",
+            title: "work",
+            href: "/work",
+        },
+        {
+            title: "Contact",
+            href: "/contact",
         },
     ],
     socialLinks: {

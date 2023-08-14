@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Avant Garde Book BT";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../public/fonts/AvantGardeITCbyBT-Book.woff") format("woff");
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -75,6 +82,9 @@
 @layer base {
     * {
         @apply border-border;
+    }
+    html {
+        font-family: "Avant Garde Book BT";
     }
     body {
         @apply bg-background text-foreground;
