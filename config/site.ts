@@ -2,6 +2,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
     name: "Nguyen Van Tuan",
+    shortName: "VanTuan",
     navLinks: [
         {
             title: "about",

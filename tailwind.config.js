@@ -13,6 +13,9 @@ module.exports = {
             },
         },
         extend: {
+            transitionTimingFunction: {
+                main: "cubic-bezier(.165,.84,.44,1)",
+            },
             colors: {
                 main: "#afa18f",
                 border: "hsl(var(--border))",

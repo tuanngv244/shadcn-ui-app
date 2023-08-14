@@ -14,12 +14,16 @@ interface MainNavProps {
 
 const MainNav = ({ items }: MainNavProps) => {
     const pathName = usePathname()
+
     return (
         <div className="flex gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2">
                 <Icons.logo className="h-6 w-6" />
-                <span className="inline-block font-bold">
+                <span className="xs:hidden sm:inline-block font-bold">
                     {siteConfig.name}
+                </span>
+                <span className="xs:inline-block sm:hidden font-bold">
+                    {siteConfig.shortName}
                 </span>
             </Link>
             {!!items?.length && (
@@ -31,7 +35,7 @@ const MainNav = ({ items }: MainNavProps) => {
                                     key={index}
                                     href={item.href}
                                     className={cn(
-                                        "flex items-center text-sm font-medium font-avant ",
+                                        "flex items-center text-md font-medium font-avant ",
                                         {
                                             "text-main": pathName == item.href,
                                         }

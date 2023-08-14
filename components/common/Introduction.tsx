@@ -14,7 +14,7 @@ const Introduction: FC<Props> = ({}) => {
     const size = isHover ? 400 : 40
     const mainStyles = "h-screen relative overflow-hidden"
     const maskStyles =
-        " w-full h-full flex items-center text-white font-avant  justify-center xs:text-3xl sm:text-4xl md:text-6xl xs:leading-[30px] sm:leading-[40px] md:leading-[66px] cursor-default"
+        " w-full h-full flex items-center text-white font-avant  justify-center xs:text-3xl sm:text-4xl md:text-6xl xs:leading-[40px] sm:leading-[50px] md:leading-[66px] cursor-default"
     const titleStyles = {
         maxWidth: "1000px",
         color: "#afa18f",
