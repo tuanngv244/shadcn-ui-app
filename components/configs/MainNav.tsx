@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -12,6 +13,7 @@ interface MainNavProps {
 }
 
 const MainNav = ({ items }: MainNavProps) => {
+    const pathName = usePathname()
     return (
         <div className="flex gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2">
@@ -29,9 +31,10 @@ const MainNav = ({ items }: MainNavProps) => {
                                     key={index}
                                     href={item.href}
                                     className={cn(
-                                        "flex items-center text-sm font-medium text-muted-foreground",
-                                        item.disabled &&
-                                            "cursor-not-allowed opacity-80"
+                                        "flex items-center text-sm font-medium font-avant ",
+                                        {
+                                            "text-main": pathName == item.href,
+                                        }
                                     )}
                                 >
                                     {item.title}

@@ -12,9 +12,14 @@ const Introduction: FC<Props> = ({}) => {
     const { x, y } = useMousePosition()
     const [isHover, setIsHover] = useState<boolean>(false)
     const size = isHover ? 400 : 40
-    const mainStyles = "h-screen relative"
+    const mainStyles = "h-screen relative overflow-hidden"
     const maskStyles =
-        " container w-full h-full flex items-center text-white justify-center text-6xl leading-[66px] cursor-default"
+        " w-full h-full flex items-center text-white font-avant  justify-center xs:text-3xl sm:text-4xl md:text-6xl xs:leading-[30px] sm:leading-[40px] md:leading-[66px] cursor-default"
+    const titleStyles = {
+        maxWidth: "1000px",
+        color: "#afa18f",
+        padding: "0 15px",
+    }
 
     return (
         <div className={mainStyles}>
@@ -25,27 +30,19 @@ const Introduction: FC<Props> = ({}) => {
                     WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
                     WebkitMaskSize: `${size}px`,
                 }}
-                transition={{ type: "tween", ease: "backOut" }}
+                transition={{ type: "tween", ease: "backOut", duration: 0.4 }}
             >
                 <p
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
-                    style={{
-                        maxWidth: "1000px",
-                        color: "#afa18f",
-                    }}
+                    style={titleStyles}
                 >
                     The core value - lies in the user experience, evaluation,
-                    interaction and story bring in product and story bring
+                    interaction, story in product and customer satisfaction.
                 </p>
             </motion.div>
             <div className={maskStyles}>
-                <p
-                    style={{
-                        maxWidth: "1000px",
-                        color: "#afa18f",
-                    }}
-                >
+                <p style={titleStyles}>
                     I'm{" "}
                     <strong className="text-red-600">
                         {" "}
