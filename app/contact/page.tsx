@@ -6,21 +6,22 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import BackgroundAnimation from "@/components/common/BackgoundAnimation"
 import { Icons } from "@/components/common/icons"
 
 export default function ContactPage() {
-    const introStyles = "m-[auto] relative py-[100px]"
+    const introStyles = "m-[auto] relative py-[100px] text-center z-2"
     const titleStyles =
         " xs:text-3xl sm:text-4xl md:text-6xl xs:leading-[40px] sm:leading-[50px] md:leading-[66px]  font-avant font-bold"
 
     const socialStyles =
-        "sticky bottom-[0] p-[20px] grid xs:grid-cols-2 sm:grid-cols-3 gap-[20px]"
+        "sticky bottom-[0] xs:p-[10px] sm:p-[20px] grid xs:grid-cols-2 sm:grid-cols-[150px_200px_auto] md:grid-cols-3 gap-[20px] z-2"
     const socialColStyles = "flex flex-col gap-[15px_0] text-main"
 
     const onSendStory = (e: ChangeEvent<HTMLInputElement>) => {}
 
     return (
-        <section className="px-[20px] pt-[65px] pb-[20px] h-[calc(100vh_-_85px)] flex flex-col min-h-screen">
+        <section className=" xs:max-w-full sm:max-w-full md:max-w-[1170px] mx-auto px-[20px] pt-[65px] pb-[20px] h-[calc(100vh_-_85px)] flex flex-col min-h-screen">
             <div className={introStyles}>
                 <p className={titleStyles}>Do you have a story? Got an idea?</p>
                 <p className={titleStyles}>
@@ -79,6 +80,7 @@ export default function ContactPage() {
                     </Button>
                 </div>
             </div>
+            <BackgroundAnimation />
         </section>
     )
 }

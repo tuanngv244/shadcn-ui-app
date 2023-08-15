@@ -14,8 +14,8 @@ const Header = () => {
     const { theme } = useTheme()
 
     return (
-        <header className="bg-transparent fixed top-0 z-40 w-full border-b px-[20px] backdrop-filter ">
-            <div className="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+        <header className="bg-transparent fixed top-0 z-40 w-full border-b xs:px-[5px] sm:px-[20px] backdrop-filter ">
+            <div className="flex h-16 items-center xs:space-x-2 sm:space-x-4 sm:justify-between sm:space-x-0">
                 <MainNav items={siteConfig.navLinks} />
                 <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-1">
