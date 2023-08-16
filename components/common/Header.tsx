@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useTheme } from "next-themes"
 
 import { siteConfig } from "@/config/site"
+import { Device, useDevice } from "@/hooks/useDevice"
 import { buttonVariants } from "@/components/ui/button"
 import MainNav from "@/components/configs/MainNav"
 
@@ -12,6 +13,7 @@ import { Icons } from "./icons"
 
 const Header = () => {
     const { theme } = useTheme()
+    const { device } = useDevice()
 
     return (
         <header className="bg-transparent fixed top-0 z-40 w-full border-b xs:px-[5px] sm:px-[20px] backdrop-filter ">
@@ -19,30 +21,32 @@ const Header = () => {
                 <MainNav items={siteConfig.navLinks} />
                 <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-1">
-                        <Link
-                            href={siteConfig.socialLinks.facebook}
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <div
-                                className={buttonVariants({
-                                    size: "icon",
-                                    variant: "ghost",
-                                    className: "px-[10px]",
-                                })}
+                        {device !== Device.Mobile && (
+                            <Link
+                                href={siteConfig.socialLinks.facebook}
+                                target="_blank"
+                                rel="noreferrer"
                             >
-                                <Icons.facebook
-                                    style={{
-                                        fill:
-                                            theme == "light"
-                                                ? "black"
-                                                : "white",
-                                    }}
-                                    className="h-5 w-5"
-                                />
-                                <span className="sr-only">Facebook</span>
-                            </div>
-                        </Link>
+                                <div
+                                    className={buttonVariants({
+                                        size: "icon",
+                                        variant: "ghost",
+                                        className: "px-[10px]",
+                                    })}
+                                >
+                                    <Icons.facebook
+                                        style={{
+                                            fill:
+                                                theme == "light"
+                                                    ? "black"
+                                                    : "white",
+                                        }}
+                                        className="h-5 w-5"
+                                    />
+                                    <span className="sr-only">Facebook</span>
+                                </div>
+                            </Link>
+                        )}
                         <ThemeToggle />
                     </nav>
                 </div>
