@@ -5,7 +5,7 @@ import BackgroundAnimation from "@/components/common/BackgoundAnimation"
 import Introduction from "@/components/common/Introduction"
 
 export default function IndexPage() {
-    const { device } = useDevice()
+    const { device } = useDevice();
     return (
         <section className="min-h-screen relative">
             <Introduction />
