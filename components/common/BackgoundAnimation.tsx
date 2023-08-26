@@ -26,11 +26,13 @@ const BackgroundAnimation: FC<Props> = ({}) => {
                         position: "absolute",
                         bottom: 0,
                         left:
-                            device === Device.Mobile ? item - index * 10 : item,
+                            device === Device.Mobile
+                                ? item - index * 10
+                                : item + index,
                     }}
                     initial={{ y: 100, opacity: 0.4, rotate: 0 }}
                     animate={{
-                        y: -500,
+                        y: -800,
                         rotate: 90,
                         opacity: 0.1,
                     }}
