@@ -2,4 +2,8 @@ dist/*
 .cache
 public
 node_modules
+app
+components
+config
+hooks
 *.esm.js
