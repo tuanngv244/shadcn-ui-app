@@ -3,11 +3,12 @@
 # ADD target/shadcn-ui-app.jar shadcn-ui-app.jar
 # ENTRYPOINT ["java","-jar","/shadcn-ui-app.jar"]
 
-FROM node:14.18-alpine as build-stage
+FROM node:16.8-alpine as build-stage
 WORKDIR /app
 COPY . .
 RUN yarn cache clean --force
 # RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
+
 RUN yarn 
 RUN yarn build
 
