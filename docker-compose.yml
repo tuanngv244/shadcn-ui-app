@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  iris-admin-fe:
+    container_name: iris-affiliate-fe
+    build: .
+    image: iris-affiliate-fe:develop
+    ports:
+      - '8098:80'
+    restart: always
+networks:
+  default:
+    external:
+      name: iris
